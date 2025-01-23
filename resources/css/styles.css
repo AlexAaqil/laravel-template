@@ -39,6 +39,10 @@ img {
      object-fit: cover;
 }
 
+a {
+  text-decoration: none;
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -83,27 +87,38 @@ img {
 
 aside {
   height: 100%;
-  position: fixed;
   padding: 4px 8px;
   text-align: center;
-  border-right: 1px solid grey;
-}
-aside .brand,
-aside .text {
-  display: none;
-}
-@media screen and (width >= 726px) {
-  aside .brand,
-  aside .text {
-    display: block;
-  }
+  border-right: 1px solid #b8b8b8;
+  position: fixed;
 }
 aside i {
   font-size: 1.5em;
 }
+@media screen and (width >= 726px) {
+  aside i {
+    font-size: 0.95em;
+  }
+}
 aside a {
   color: #000;
-  text-decoration: none;
+}
+aside .brand .text,
+aside .text {
+  display: none;
+}
+@media screen and (width >= 726px) {
+  aside .brand .text,
+  aside .text {
+    display: block;
+  }
+}
+aside .brand .profile .image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid green;
+  padding: 2px;
 }
 aside ul {
   list-style: none;
@@ -113,87 +128,67 @@ aside ul li {
   padding: 4px;
 }
 aside ul li a {
-  color: #343434;
-}
-aside .footer {
-  position: absolute;
-  bottom: 2em;
-}
-aside .footer .profile img {
-  width: 40px;
-  height: 40px;
-  padding: 2px;
-  border-radius: 50%;
-  border: 1px solid green;
-}
-aside .footer .logout {
-  margin: 0.5em 0 0;
-}
-aside .footer .logout form button {
-  padding: unset;
-  background: none;
-}
-aside .footer .logout form button i {
-  color: red;
+  color: #2b2b2b;
 }
 aside .active a {
   color: #000;
   font-weight: bold;
+}
+aside .footer {
+  position: absolute;
+  bottom: 1.6em;
+}
+aside .footer .logout form button {
+  padding: 4px 6px;
+  background: red;
 }
 
 @media screen and (width >= 726px) {
   aside {
     text-align: left;
   }
-  aside i {
-    font-size: 0.95em;
-  }
-  aside .brand a {
+  aside .brand .profile {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.2em;
-    font-size: 1.2em;
-    font-weight: bold;
+    gap: 0.4em;
+  }
+  aside .brand .profile .image img {
+    width: 30px;
+    height: 30px;
+  }
+  aside .brand .profile .text {
+    display: grid;
+  }
+  aside .brand .profile .text a {
+    font-size: 0.84em;
+  }
+  aside .brand .profile .text span {
+    font-size: 0.72em;
   }
   aside ul {
-    margin: 1.8em 0;
+    margin: 1em 0 0.4em;
   }
   aside ul li {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #b8b8b8;
   }
   aside ul li a {
-    display: flex;
+    display: grid;
+    grid-template-columns: 16px auto;
     align-items: center;
-    gap: 0.2em;
+    gap: 0.28em;
+    font-size: 0.92em;
   }
   aside .footer {
-    left: 0;
-    margin: 0 0.4em 0;
+    width: 92%;
   }
-  aside .footer .profile,
-  aside .footer .logout button {
+  aside .footer form button {
+    width: 100%;
     display: flex;
     align-items: center;
-    gap: 0.3em;
-  }
-  aside .footer .profile img {
-    width: 35px;
-    height: 35px;
-  }
-  aside .footer .profile span {
-    font-size: 0.8em;
-  }
-  aside .footer .logout form button {
     justify-content: center;
-    color: #fff;
-    background: red;
-    width: 100%;
-    padding: 6px 8px;
-    text-align: center;
-  }
-  aside .footer .logout form button i {
-    color: #fff;
+    gap: 0.2em;
+    font-weight: bold;
+    padding: 6px 8px !important;
   }
 }
 nav {

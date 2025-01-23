@@ -1,6 +1,19 @@
 <aside>
     <div class="brand">
-        <a href="{{ route('home') }}">{{ env('APP_NAME') }}</a>
+        <div class="profile">
+            <div class="image">
+                <a href="{{ route('profile.edit') }}">
+                    <img src="{{ asset('assets/images/default_profile.jpg') }}" alt="Profile Image">
+                </a>
+            </div>
+
+            <div class="text">
+                <a href="{{ route('profile.edit') }}">
+                    {{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}
+                </a>
+                <span>{{ Auth::user()->email }}</span>
+            </div>
+        </div>
     </div>
 
     <ul class="links">
@@ -24,18 +37,6 @@
     </ul>
 
     <div class="footer">
-        <div class="profile">
-            <a href="{{ route('profile.edit') }}">
-                <img src="{{ asset('assets/images/default_profile.jpg') }}" alt="Profile Image">
-            </a>
-            <span class="text">
-                <a href="{{ route('profile.edit') }}">
-                    {{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}
-                </a>
-                <span>{{ Auth::user()->email }}</span>
-            </span>
-        </div>
-
         <div class="logout">
             <form action="{{ route('logout') }}" method="post">
                 @csrf
