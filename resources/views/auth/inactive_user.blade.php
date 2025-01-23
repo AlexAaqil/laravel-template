@@ -7,7 +7,7 @@
     
             <div class="text">
                 <p>Your account has been suspended.</p>
-                <p>For more details.</p>
+                <p>Contact the admin for assistance.</p>
                 <div class="button">
                     <a href="{{ route('contact') }}" class="btn">Contact Us</a>
                 </div>
